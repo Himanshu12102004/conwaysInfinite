@@ -10,6 +10,7 @@ declare global {
 
 const init = async () => {
   try {
+    console.log(process);
     if (!process.env.MONGO_URI)
       throw new Custom_error({
         errors: [{ message: 'MONGO_URINotFound' }],

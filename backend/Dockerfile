@@ -1,7 +1,9 @@
 FROM node:alpine
 WORKDIR /app
-COPY package.json package.json 
-COPY package-lock.json package-lock.json 
+COPY package.json .
+COPY package-lock.json . 
+COPY tsconfig.json .
+COPY .env .
 RUN npm install
 COPY . .
 CMD [ "npm", "start" ]

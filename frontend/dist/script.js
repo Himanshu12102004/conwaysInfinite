@@ -20,7 +20,6 @@ let speedController;
 document.addEventListener('DOMContentLoaded', () => {
     let svgs = document.querySelectorAll('svg');
     svgs.forEach((ele) => {
-        console.log(ele);
         ele.setAttribute('fill', `rgb(${GlobalVariables.boxColor[0]},${GlobalVariables.boxColor[1]},${GlobalVariables.boxColor[2]})`);
     });
     document.querySelector('.generation').style.color = `rgb(${GlobalVariables.boxColor[0]},${GlobalVariables.boxColor[1]},${GlobalVariables.boxColor[2]})`;
@@ -116,18 +115,17 @@ function init() {
             .name('Speed');
         controlFolder.open();
         let colorFolder = gui.addFolder('Colors');
-        let generationDiv = document.querySelector(".generation");
-        let liveCellsDiv = document.querySelector(".liveCells");
-        let zoomDiv = document.querySelector(".zoom");
-        let fpsDiv = document.querySelector(".fps");
-        let madeByDiv = document.querySelector(".madeBy");
+        let generationDiv = document.querySelector('.generation');
+        let liveCellsDiv = document.querySelector('.liveCells');
+        let zoomDiv = document.querySelector('.zoom');
+        let fpsDiv = document.querySelector('.fps');
+        let madeByDiv = document.querySelector('.madeBy');
         colorFolder
             .addColor(GlobalVariables, 'boxColor')
             .name('Cell Color')
             .onChange(() => {
             let svgs = document.querySelectorAll('svg');
             svgs.forEach((ele) => {
-                console.log(ele);
                 ele.setAttribute('fill', `rgb(${GlobalVariables.boxColor[0]},${GlobalVariables.boxColor[1]},${GlobalVariables.boxColor[2]})`);
             });
             let color = `rgb(${GlobalVariables.boxColor[0]},${GlobalVariables.boxColor[1]},${GlobalVariables.boxColor[2]})`;

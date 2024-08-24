@@ -9,8 +9,6 @@ function unicodeToChar(text) {
 }
 const getPattern = (0, utils_1.async_error_handler)(async (req, res, next) => {
     let { name, your, search } = req.query;
-    console.log(req.user);
-    console.log(your);
     let patterns = [];
     if (name) {
         name = unicodeToChar(name);

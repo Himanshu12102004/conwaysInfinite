@@ -44,7 +44,6 @@ function searching() {
             headers: { authorization: `Bearer ${localStorage.getItem('token')}` },
         });
         let response = yield res.json();
-        console.log(response);
         if (!response.success) {
             signupFirst.style.display = 'flex';
             loader.style.display = 'none';
@@ -81,7 +80,6 @@ function searching() {
 }
 function fetchFrombackend() {
     return __awaiter(this, void 0, void 0, function* () {
-        console.log(getQueryParam('name'));
         document.querySelector('.frontend').style.zIndex = '-1';
         loaderFullScreen.style.display = 'none';
         blur.style.display = 'none';
@@ -94,7 +92,6 @@ function fetchFrombackend() {
                 method: 'GET',
             });
             let response = yield res.json();
-            console.log(response);
             GlobalVariables.liveCells = new Set(response.responseMessage[0].grid);
             GlobalVariables.speed = 97;
             liveCells.innerHTML = `${GlobalVariables.liveCells.size} Live Cells`;

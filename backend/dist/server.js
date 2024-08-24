@@ -16,7 +16,6 @@ const init = async () => {
                 statusCode: 500,
             });
         await mongoose_1.default.connect(process.env.MONGO_URI);
-        console.log(process.env.MONGO_URI);
         app_1.app.listen(process.env.PORT, async () => {
             console.log('Server started!!!!!!');
         });

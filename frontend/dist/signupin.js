@@ -43,7 +43,6 @@ function configure() {
 }
 btn.addEventListener('click', () => {
     signUpMode = !signUpMode;
-    console.log(signUpMode);
     configure();
 });
 signInUpBtn.addEventListener('click', () => __awaiter(void 0, void 0, void 0, function* () {

@@ -2,16 +2,17 @@ services:
   mongo:
     image: mongo
     ports:
-      - "27017:27017"
+      - '27017:27017'
     networks:
       - himanshu
+    volumes:
+      - ./mongo:/data/db
   server:
-    image: himanshu12102004/conwaysgameoflife:1  
+    image: himanshu12102004/conwaysgameoflife:6
     ports:
-      - "443:3001"
+      - '443:3001'
     networks:
       - himanshu
 networks:
   himanshu:
     driver: bridge
-  

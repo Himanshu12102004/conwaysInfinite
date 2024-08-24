@@ -86,19 +86,22 @@ function fetchFrombackend() {
         loaderFullScreen.style.display = 'none';
         blur.style.display = 'none';
         if (getQueryParam('name') != null) {
+            GlobalVariables.speed = 0;
+            document.querySelector('.frontend').style.zIndex = '6';
             blur.style.display = 'block';
             loaderFullScreen.style.display = 'flex';
-            blur.style.display = 'block';
             let res = yield fetch(`${GlobalVariables.backendUrl}/patterns?name=${getQueryParam('name')}`, {
                 method: 'GET',
             });
             let response = yield res.json();
             console.log(response);
             GlobalVariables.liveCells = new Set(response.responseMessage[0].grid);
+            GlobalVariables.speed = 97;
             liveCells.innerHTML = `${GlobalVariables.liveCells.size} Live Cells`;
             templatePage.style.display = 'none';
             loaderFullScreen.style.display = 'none';
             blur.style.display = 'none';
+            document.querySelector('.frontend').style.zIndex = '-1';
         }
     });
 }

@@ -9,7 +9,6 @@ import { UserModel } from '../models/user';
 const authenticateUser = async_error_handler(
   async (req: reqWithUser, res: Response, next: NextFunction) => {
     const token = req.headers.authorization?.split(' ')[1];
-    console.log('fdfjdhf');
     if (
         req.url.startsWith('/patterns') &&
       !(  req.query.your &&
@@ -19,7 +18,6 @@ const authenticateUser = async_error_handler(
       next();
       return;
     }
-    console.log('fdfjdfhjfufuhsdfui');
     if (!token) {
       throw new Custom_error({
         errors: [{ message: 'TokenMissing' }],

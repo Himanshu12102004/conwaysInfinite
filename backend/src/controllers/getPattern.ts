@@ -14,8 +14,7 @@ function unicodeToChar(text: string) {
 const getPattern = async_error_handler(
   async (req: reqWithUser, res: Response, next: NextFunction) => {
     let { name, your, search } = req.query;
-    console.log(req.user)
-    console.log(your);
+  
     let patterns: any = [];
     if (name) {
       name = unicodeToChar(name as string);

@@ -9,7 +9,6 @@ import { reqWithUser } from '../types';
 import { UserModel } from '../models/user';
 const isLoggedIn = async_error_handler(
   async (req: reqWithUser, res: Response, next: NextFunction) => {
-    console.log(req.user)
   const response = new Custom_response(
     true,
     null,

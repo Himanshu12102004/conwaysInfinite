@@ -39,7 +39,6 @@ async function searching(search = '') {
     }
   );
   let response = await res.json();
-  console.log(response);
   if (!response.success) {
     signupFirst.style.display = 'flex';
     loader.style.display = 'none';
@@ -78,14 +77,14 @@ async function searching(search = '') {
   });
 }
 async function fetchFrombackend() {
-  console.log(getQueryParam('name'));
   (document.querySelector('.frontend')! as HTMLDivElement).style.zIndex = '-1';
   loaderFullScreen.style.display = 'none';
   blur.style.display = 'none';
   if (getQueryParam('name') != null) {
+    GlobalVariables.speed=0;
+  (document.querySelector('.frontend')! as HTMLDivElement).style.zIndex = '6';
     blur.style.display = 'block';
     loaderFullScreen.style.display = 'flex';
-    blur.style.display = 'block';
     let res = await fetch(
       `${GlobalVariables.backendUrl}/patterns?name=${getQueryParam('name')!}`,
       {
@@ -93,15 +92,18 @@ async function fetchFrombackend() {
       }
     );
     let response = await res.json();
-    console.log(response);
     GlobalVariables.liveCells = new Set<string>(
       response.responseMessage[0].grid
     );
+    GlobalVariables.speed=97;
+
     liveCells.innerHTML = `${GlobalVariables.liveCells.size} Live Cells`;
 
     templatePage.style.display = 'none';
     loaderFullScreen.style.display = 'none';
     blur.style.display = 'none';
+  (document.querySelector('.frontend')! as HTMLDivElement).style.zIndex = '-1';
+
   }
 }
 function hello(name: string) {

@@ -1,7 +1,7 @@
 import GlobalVariables from '../globalVariables.js';
 
 function checkCondition(count: number, myKey: string): boolean {
-  const rulesEntries = GlobalVariables.rules.entries(); // Use the iterator directly
+  const rulesEntries = GlobalVariables.rules.entries(); 
 
   for (const [noOfCellsAlive, value] of rulesEntries) {
     if (value[0] && value[1]) {

@@ -1,0 +1,10 @@
+import { Router } from 'express';
+import login from '../controllers/login';
+import authenticateUser from '../auth/auth';
+import getPattern from '../controllers/getPattern';
+import isLoggedIn from '../controllers/isLoggedIn';
+const router = Router();
+router.route('/login').post(login);
+router.route('/patterns').get(authenticateUser, getPattern);
+router.route('/isLoggedIn').get(authenticateUser, isLoggedIn);
+export default router;

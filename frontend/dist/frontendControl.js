@@ -85,7 +85,7 @@ function fetchFrombackend() {
         blur.style.display = 'none';
         if (getQueryParam('name') != null) {
             GlobalVariables.speed = 0;
-            document.querySelector('.frontend').style.zIndex = '6';
+            // (document.querySelector('.frontend')! as HTMLDivElement).style.zIndex = '6';
             blur.style.display = 'block';
             loaderFullScreen.style.display = 'flex';
             let res = yield fetch(`${GlobalVariables.backendUrl}/patterns?name=${getQueryParam('name')}`, {
@@ -97,8 +97,8 @@ function fetchFrombackend() {
             liveCells.innerHTML = `${GlobalVariables.liveCells.size} Live Cells`;
             templatePage.style.display = 'none';
             loaderFullScreen.style.display = 'none';
-            blur.style.display = 'none';
             document.querySelector('.frontend').style.zIndex = '-1';
+            blur.style.display = 'none';
         }
     });
 }

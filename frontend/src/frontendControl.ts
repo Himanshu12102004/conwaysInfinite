@@ -82,7 +82,7 @@ async function fetchFrombackend() {
   blur.style.display = 'none';
   if (getQueryParam('name') != null) {
     GlobalVariables.speed=0;
-  (document.querySelector('.frontend')! as HTMLDivElement).style.zIndex = '6';
+  // (document.querySelector('.frontend')! as HTMLDivElement).style.zIndex = '6';
     blur.style.display = 'block';
     loaderFullScreen.style.display = 'flex';
     let res = await fetch(
@@ -101,9 +101,9 @@ async function fetchFrombackend() {
 
     templatePage.style.display = 'none';
     loaderFullScreen.style.display = 'none';
+    (document.querySelector('.frontend')! as HTMLDivElement).style.zIndex = '-1';
+    
     blur.style.display = 'none';
-  (document.querySelector('.frontend')! as HTMLDivElement).style.zIndex = '-1';
-
   }
 }
 function hello(name: string) {

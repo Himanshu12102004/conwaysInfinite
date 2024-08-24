@@ -12,6 +12,7 @@ let speedController: any;
 document.addEventListener('DOMContentLoaded', () => {
   let svgs = document.querySelectorAll('svg');
   svgs.forEach((ele) => {
+    console.log(ele);
     ele.setAttribute(
       'fill',
       `rgb(${GlobalVariables.boxColor[0]},${GlobalVariables.boxColor[1]},${GlobalVariables.boxColor[2]})`
@@ -135,21 +136,29 @@ async function init() {
 
   controlFolder.open();
   let colorFolder = gui.addFolder('Colors');
-  let specsDiv = document.querySelector('.specs') as HTMLDivElement;
-
+let generationDiv=document.querySelector(".generation") as HTMLDivElement;
+let liveCellsDiv=document.querySelector(".liveCells") as HTMLDivElement;
+let zoomDiv=document.querySelector(".zoom") as HTMLDivElement;
+let fpsDiv=document.querySelector(".fps") as HTMLDivElement;
+let madeByDiv=document.querySelector(".madeBy") as HTMLDivElement
   colorFolder
     .addColor(GlobalVariables, 'boxColor')
     .name('Cell Color')
     .onChange(() => {
       let svgs = document.querySelectorAll('svg');
       svgs.forEach((ele) => {
+        console.log(ele);
         ele.setAttribute(
           'fill',
           `rgb(${GlobalVariables.boxColor[0]},${GlobalVariables.boxColor[1]},${GlobalVariables.boxColor[2]})`
         );
       });
-
-      specsDiv.style.color = `rgb(${GlobalVariables.boxColor[0]},${GlobalVariables.boxColor[1]},${GlobalVariables.boxColor[2]})`;
+    let color=  `rgb(${GlobalVariables.boxColor[0]},${GlobalVariables.boxColor[1]},${GlobalVariables.boxColor[2]})`
+      generationDiv.style.color = color; 
+    liveCellsDiv.style.color=color;
+    zoomDiv.style.color=color;
+    fpsDiv.style.color=color;
+    madeByDiv.style.color=color
     });
 
   colorFolder.addColor(GlobalVariables, 'gridColor').name('Grid Color');

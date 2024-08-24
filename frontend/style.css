@@ -100,7 +100,7 @@ svg {
   right: 0;
   z-index: 3;
   background-color: rgba(0, 0, 0, 0.9);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(6px);
   display: none;
 }
 .frontend {
@@ -223,9 +223,9 @@ svg {
 .loaderFullScreen {
   z-index: 5;
   position: absolute;
-  top:0;
-  left:0;
-  right:0;
+  top: 0;
+  left: 0;
+  right: 0;
   bottom: 0;
   padding-top: 0;
   display: flex;
@@ -233,7 +233,7 @@ svg {
   justify-content: center;
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.9);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(6px);
 }
 .searchBox {
   border: none;
@@ -330,7 +330,7 @@ svg {
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.9);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(6px);
   text-align: center;
   display: none;
 }

@@ -1,7 +1,7 @@
 FROM node:alpine
 WORKDIR /app
-COPY package.json .
-RUN npm install --omit=dev
+COPY package.json package.json 
+COPY package-lock.json package-lock.json 
+RUN npm install
 COPY . .
-EXPOSE 3001 3050
 CMD [ "npm", "start" ]

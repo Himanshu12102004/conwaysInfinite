@@ -1,0 +1,17 @@
+services:
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    networks:
+      - himanshu
+  server:
+    image: himanshu12102004/conwaysgameoflife:1  
+    ports:
+      - "443:3001"
+    networks:
+      - himanshu
+networks:
+  himanshu:
+    driver: bridge
+  

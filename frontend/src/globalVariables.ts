@@ -37,9 +37,9 @@ class GlobalVariables {
   static gridColor = [50, 50, 50];
   static backgroundColor = [0, 0, 0];
   static rules: Map<number, boolean[]> = new Map([
-    [2, [true,true]],
+    [2, [true, true]],
     [3, [true, false]],
   ]);
-  static backendUrl = 'http://14.139.56.17:3050/api/v1';
+  static backendUrl = 'https://conwaysinfinite.onrender.com/api/v1';
 }
 export default GlobalVariables;

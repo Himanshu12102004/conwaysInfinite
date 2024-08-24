@@ -40,5 +40,5 @@ GlobalVariables.rules = new Map([
     [2, [true, true]],
     [3, [true, false]],
 ]);
-GlobalVariables.backendUrl = 'http://14.139.56.17:3050/api/v1';
+GlobalVariables.backendUrl = 'https://conwaysinfinite.onrender.com/api/v1';
 export default GlobalVariables;

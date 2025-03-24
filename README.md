@@ -15,7 +15,6 @@ Conway's Game of Life is a GPU-accelerated cellular automaton simulation featuri
 git clone https://github.com/Himanshu12102004/conwaysInfinite
 cd conwaysInfinite/frontend
 
-# Install dependencies
 tsc-watch
 
 ```

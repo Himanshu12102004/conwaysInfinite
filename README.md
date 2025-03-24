@@ -16,13 +16,10 @@ git clone https://github.com/Himanshu12102004/conwaysInfinite
 cd conwaysInfinite/frontend
 
 # Install dependencies
-npm install
+tsc-watch
 
-# Start the development server
-npm run dev
 ```
-
-Open `http://localhost:3000` in your browser.
+Run using live preview of VSCode
 
 ## Usage
 - Modify the rules of Conway’s Game of Life in real time.
@@ -32,7 +29,6 @@ Open `http://localhost:3000` in your browser.
 
 ## Technologies Used
 - **WebGL** for high-performance rendering
-- **React** for UI management
 - **TypeScript** for type safety
 - **Custom Cellular Automata Rules** for enhanced flexibility
 
